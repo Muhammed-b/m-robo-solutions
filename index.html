@@ -20,10 +20,8 @@
             --text: #1a1a1a;
             --text-light: #666666;
             --accent: #2563eb;
-            /* Professional Blue */
             --accent-soft: rgba(37, 99, 235, 0.05);
             --accent-2: #ff9800;
-            /* Light Orange */
             --accent-2-soft: rgba(255, 152, 0, 0.1);
             --border: #e5e7eb;
             --heading-color: #0f172a;
@@ -732,14 +730,12 @@
             background: var(--bg);
             border: 1px solid var(--border);
             border-radius: 32px;
-            padding: 48px;
             cursor: pointer;
             transition: all 0.5s var(--transition);
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             box-shadow: var(--shadow);
             animation: RoboFade_In 0.8s ease-out backwards;
         }
@@ -766,11 +762,36 @@
             opacity: 1;
         }
 
-        .card i {
-            font-size: 3rem;
+        .card-img {
+            height: 220px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-img img {
+            transform: scale(1.1);
+        }
+
+        .card-info {
+            padding: 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-info i {
+            font-size: 1.5rem;
             color: var(--accent);
-            margin-bottom: 30px;
-            transition: 0.5s;
+            margin-bottom: 15px;
+            display: block;
         }
 
         .card:hover i {
@@ -778,8 +799,48 @@
             color: var(--accent-2);
         }
 
+        .card h2 {
+            font-family: var(--font-head);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .meta {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+        }
+
+        .tech-tags {
+            display: flex;
+            gap: 8px;
+            margin-top: auto;
+            flex-wrap: wrap;
+        }
+
+        .tech-tag {
+            font-size: 0.65rem;
+            background: var(--accent-soft);
+            color: var(--accent);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
         .view-project-btn {
-            margin-top: 30px;
+            margin-top: 20px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -789,6 +850,8 @@
             opacity: 0;
             transform: translateX(-10px);
             transition: 0.4s;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
         }
 
         .card:hover .view-project-btn {
@@ -810,67 +873,6 @@
 
         .card:nth-child(even) {
             animation-delay: -3s;
-        }
-
-        .card:hover {
-            transform: translateY(-12px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--accent);
-        }
-
-        .card-img {
-            height: 220px;
-            background: #f0f0f0;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: 0.5s;
-        }
-
-        .card:hover .card-img img {
-            transform: scale(1.1);
-        }
-
-        .card-info i {
-            font-size: 1.5rem;
-            color: var(--accent);
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .card-info {
-            padding: 30px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .card h2 {
-            font-family: var(--font-head);
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 8px;
-        }
-
-        .card p {
-            font-size: 1rem;
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        .meta {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
         }
 
         /* --- PROJECT DETAIL TEMPLATE STYLES --- */
@@ -933,10 +935,15 @@
             overflow: hidden;
         }
 
-        .proj-visual i {
-            font-size: 8rem;
-            color: var(--accent);
-            filter: drop-shadow(0 10px 15px rgba(37, 99, 235, 0.1));
+        .proj-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .proj-visual:hover img {
+            transform: scale(1.05);
         }
 
         .proj-h1 {
@@ -1058,8 +1065,6 @@
             color: var(--heading-color);
         }
 
-        /* Removed Unused Themes */
-
         .code-block::before {
             content: "FIRMWARE LOGIC";
             position: absolute;
@@ -1080,13 +1085,13 @@
         }
 
         .spec-card {
-            background: #050505;
+            background: var(--section-bg);
             padding: 35px;
             border-radius: 15px;
             text-align: center;
-            border: 1px solid #1a1a1a;
+            border: 1px solid var(--border);
             transition: 0.4s;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            box-shadow: var(--shadow);
             position: relative;
             overflow: hidden;
         }
@@ -1195,11 +1200,13 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            background: #ff5000;
+            background: linear-gradient(90deg, var(--accent), #3b82f6, var(--accent));
             border-top: none;
             padding: 12px 0;
             z-index: 999;
             overflow: hidden;
+            background-size: 200% 100%;
+            animation: gradientShift 3s ease infinite;
         }
 
         @keyframes gradientShift {
@@ -1701,7 +1708,7 @@
             }
 
             .card {
-                padding: 30px;
+                padding: 0;
             }
 
             /* About Mobile */
@@ -1977,132 +1984,119 @@
         </section>
 
         <div class="grid">
-            <!-- Cards (Project Images removed for Home Page as requested) -->
+            <!-- Medicine OX Pro -->
             <div class="card reveal ani_health_pulse" onclick="switchView('med-pro')">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Medical Robot">
+                </div>
                 <div class="card-info">
                     <i class="fa-solid fa-robot ani_health_pulse"></i>
                     <span class="meta">Robotics 01</span>
                     <h2>Medicine OX Pro</h2>
-                    <p>Autonomous medical delivery robot featuring advanced line-following navigation, RTC-based
-                        scheduling, and servo-controlled dispensing mechanism.</p>
-                    <div style="display: flex; gap: 8px; margin-top: 20px; flex-wrap: wrap;">
-                        <span
-                            style="font-size: 0.65rem; background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 4px; font-weight: 700;">ARDUINO</span>
-                        <span
-                            style="font-size: 0.65rem; background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 4px; font-weight: 700;">RTC
-                            DS3231</span>
-                        <span
-                            style="font-size: 0.65rem; background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 4px; font-weight: 700;">L298N</span>
+                    <p>Autonomous medical delivery robot featuring advanced line-following navigation, RTC-based scheduling, and servo-controlled dispensing mechanism.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">ARDUINO</span>
+                        <span class="tech-tag">RTC DS3231</span>
+                        <span class="tech-tag">L298N</span>
                     </div>
                 </div>
                 <div class="view-project-btn">PROJECT INTEL <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
+            <!-- RFID Matrix -->
             <div class="card reveal ani_circuit_glow" onclick="switchView('rfid-sys')">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="RFID System">
+                </div>
                 <div class="card-info">
                     <i class="fa-solid fa-id-card ani_card_tap"></i>
                     <span class="meta">IoT Security 02</span>
                     <h2>RFID Matrix</h2>
-                    <p>Cloud-integrated ESP32 attendance system with MFRC522 RFID reader, real-time WiFi logging to
-                        Google Sheets, and automated security protocols.</p>
-                    <div style="display: flex; gap: 8px; margin-top: 20px; flex-wrap: wrap;">
-                        <span
-                            style="font-size: 0.65rem; background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 4px; font-weight: 700;">ESP32</span>
-                        <span
-                            style="font-size: 0.65rem; background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 4px; font-weight: 700;">MFRC522</span>
-                        <span
-                            style="font-size: 0.65rem; background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 4px; font-weight: 700;">G-SHEETS
-                            API</span>
+                    <p>Cloud-integrated ESP32 attendance system with MFRC522 RFID reader, real-time WiFi logging to Google Sheets, and automated security protocols.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">ESP32</span>
+                        <span class="tech-tag">MFRC522</span>
+                        <span class="tech-tag">G-SHEETS API</span>
                     </div>
                 </div>
                 <div class="view-project-btn">PROJECT INTEL <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
+            <!-- POV Visualizer -->
             <div class="card reveal ani_neon_scan" onclick="switchView('pov-sys')">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&fit=crop&w=800&q=80" alt="LED Display">
+                </div>
                 <div class="card-info">
                     <i class="fa-solid fa-bolt ani_digital_pulse"></i>
                     <span class="meta">Embedded 03</span>
                     <h2>POV Visualizer</h2>
-                    <p>High-speed rotating LED display exploiting persistence of vision phenomenon to create holographic
-                        text projections with microsecond-precision timing.</p>
-                    <div style="display: flex; gap: 8px; margin-top: 20px; flex-wrap: wrap;">
-                        <span
-                            style="font-size: 0.65rem; background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 4px; font-weight: 700;">ARDUINO
-                            NANO</span>
-                        <span
-                            style="font-size: 0.65rem; background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 4px; font-weight: 700;">HALL
-                            EFFECT</span>
-                        <span
-                            style="font-size: 0.65rem; background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 4px; font-weight: 700;">PWM
-                            LED</span>
+                    <p>High-speed rotating LED display exploiting persistence of vision phenomenon to create holographic text projections with microsecond-precision timing.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">ARDUINO NANO</span>
+                        <span class="tech-tag">HALL EFFECT</span>
+                        <span class="tech-tag">PWM LED</span>
                     </div>
                 </div>
                 <div class="view-project-btn">PROJECT INTEL <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
+            <!-- Eco-Bin AI -->
             <div class="card reveal ani_lid_open" onclick="switchView('eco-sys')">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80" alt="Smart Trash Bin">
+                </div>
                 <div class="card-info">
                     <i class="fa-solid fa-recycle ani_servo_swing"></i>
                     <span class="meta">Automation 04</span>
                     <h2>Eco-Bin AI</h2>
-                    <p>Intelligent touchless waste management system utilizing ultrasonic proximity detection,
-                        servo-actuated lid mechanism, and absolute hygienic operation.</p>
-                    <div style="display: flex; gap: 8px; margin-top: 20px; flex-wrap: wrap;">
-                        <span
-                            style="font-size: 0.65rem; background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 4px; font-weight: 700;">ATMEGA328P</span>
-                        <span
-                            style="font-size: 0.65rem; background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 4px; font-weight: 700;">HC-SR04</span>
-                        <span
-                            style="font-size: 0.65rem; background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 4px; font-weight: 700;">SERVO
-                            PWM</span>
+                    <p>Intelligent touchless waste management system utilizing ultrasonic proximity detection, servo-actuated lid mechanism, and absolute hygienic operation.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">ATMEGA328P</span>
+                        <span class="tech-tag">HC-SR04</span>
+                        <span class="tech-tag">SERVO PWM</span>
                     </div>
                 </div>
                 <div class="view-project-btn">PROJECT INTEL <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
+            <!-- Hydro-Sense -->
             <div class="card reveal ani_digital_pulse" onclick="switchView('hydro-sys')">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1542013936693-884638332954?auto=format&fit=crop&w=800&q=80" alt="Water Dispenser">
+                </div>
                 <div class="card-info">
                     <i class="fa-solid fa-droplet ani_digital_pulse"></i>
                     <span class="meta">Hygiene 05</span>
                     <h2>Hydro-Sense</h2>
-                    <p>IR-triggered automated water dispensing system with solid-state relay control, instantaneous flow
-                        activation, and precision conservation technology.</p>
-                    <div style="display: flex; gap: 8px; margin-top: 20px; flex-wrap: wrap;">
-                        <span
-                            style="font-size: 0.65rem; background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 4px; font-weight: 700;">IR-SENSOR</span>
-                        <span
-                            style="font-size: 0.65rem; background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 4px; font-weight: 700;">12V
-                            RELAY</span>
-                        <span
-                            style="font-size: 0.65rem; background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 4px; font-weight: 700;">DIAPHRAGM
-                            PUMP</span>
+                    <p>IR-triggered automated water dispensing system with solid-state relay control, instantaneous flow activation, and precision conservation technology.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">IR-SENSOR</span>
+                        <span class="tech-tag">12V RELAY</span>
+                        <span class="tech-tag">DIAPHRAGM PUMP</span>
                     </div>
                 </div>
                 <div class="view-project-btn">PROJECT INTEL <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
+            <!-- CNC Plotter -->
             <div class="card reveal ani_circuit_glow" onclick="switchView('cnc-sys')">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80" alt="CNC Machine">
+                </div>
                 <div class="card-info">
                     <i class="fa-solid fa-pen-nib ani_servo_swing"></i>
                     <span class="meta">CNC 06</span>
                     <h2>CNC Plotter</h2>
-                    <p>Precision 2-axis computer numerical control drawing machine with G-code interpretation, stepper
-                        motor control, and micro-servo pen lift mechanism.</p>
-                    <div style="display: flex; gap: 8px; margin-top: 20px; flex-wrap: wrap;">
-                        <span
-                            style="font-size: 0.65rem; background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 4px; font-weight: 700;">G-CODE</span>
-                        <span
-                            style="font-size: 0.65rem; background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 4px; font-weight: 700;">STEPPER
-                            MOTOR</span>
-                        <span
-                            style="font-size: 0.65rem; background: var(--accent-soft); color: var(--accent); padding: 4px 10px; border-radius: 4px; font-weight: 700;">CNC
-                            SHIELD</span>
+                    <p>Precision 2-axis computer numerical control drawing machine with G-code interpretation, stepper motor control, and micro-servo pen lift mechanism.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">G-CODE</span>
+                        <span class="tech-tag">STEPPER MOTOR</span>
+                        <span class="tech-tag">CNC SHIELD</span>
                     </div>
                 </div>
                 <div class="view-project-btn">PROJECT INTEL <i class="fa-solid fa-arrow-right"></i></div>
             </div>
-
-
         </div>
 
         <section id="about"
@@ -2139,7 +2133,7 @@
                         through practical methods in the future.
                     </p>
 
-                    <!-- NEW: Technical Expertise Section -->
+                    <!-- Technical Expertise Section -->
                     <div
                         style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 50px;">
                         <div style="background: var(--bg); padding: 30px; border-radius: 20px; border: 1px solid var(--border); transition: 0.3s; cursor: default;"
@@ -2338,7 +2332,7 @@
             </div>
             <div class="proj-visual">
                 <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
-                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow);">
+                    alt="Medical Robot">
             </div>
         </div>
         <div class="specs-grid">
@@ -2404,7 +2398,7 @@
             </div>
             <div class="proj-visual">
                 <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80"
-                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow);">
+                    alt="RFID System">
             </div>
         </div>
         <div class="specs-grid">
@@ -2470,7 +2464,7 @@
             </div>
             <div class="proj-visual">
                 <img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&fit=crop&w=800&q=80"
-                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow);">
+                    alt="LED Display">
             </div>
         </div>
         <div class="specs-grid">
@@ -2536,7 +2530,7 @@ if (sensor == LOW) { drawHologram(); }</code></pre>
             </div>
             <div class="proj-visual">
                 <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80"
-                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow);">
+                    alt="Smart Trash Bin">
             </div>
         </div>
         <div class="specs-grid">
@@ -2601,7 +2595,7 @@ if (sensor == LOW) { drawHologram(); }</code></pre>
             </div>
             <div class="proj-visual">
                 <img src="https://images.unsplash.com/photo-1542013936693-884638332954?auto=format&fit=crop&w=800&q=80"
-                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow);">
+                    alt="Water Dispenser">
             </div>
         </div>
         <div class="specs-grid">
@@ -2666,7 +2660,7 @@ if (sensor == LOW) { drawHologram(); }</code></pre>
             </div>
             <div class="proj-visual">
                 <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80"
-                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow);">
+                    alt="CNC Machine">
             </div>
         </div>
         <div class="specs-grid">
@@ -2713,6 +2707,17 @@ if (sensor == LOW) { drawHologram(); }</code></pre>
         </div>
     </section>
 
+    <!-- Marquee Banner -->
+    <div class="marquee-banner">
+        <div class="marquee-content">
+            <div class="marquee-text"><i class="fa-solid fa-microchip"></i> INNOVATING ROBOTIC SOLUTIONS <i class="fa-solid fa-bolt"></i></div>
+            <div class="marquee-text"><i class="fa-solid fa-robot"></i> EMBEDDED SYSTEMS EXPERTISE <i class="fa-solid fa-code"></i></div>
+            <div class="marquee-text"><i class="fa-solid fa-cloud"></i> IOT & AUTOMATION SPECIALIST <i class="fa-solid fa-network-wired"></i></div>
+            <div class="marquee-text"><i class="fa-solid fa-microchip"></i> INNOVATING ROBOTIC SOLUTIONS <i class="fa-solid fa-bolt"></i></div>
+            <div class="marquee-text"><i class="fa-solid fa-robot"></i> EMBEDDED SYSTEMS EXPERTISE <i class="fa-solid fa-code"></i></div>
+            <div class="marquee-text"><i class="fa-solid fa-cloud"></i> IOT & AUTOMATION SPECIALIST <i class="fa-solid fa-network-wired"></i></div>
+        </div>
+    </div>
 
     <script>
         // Cinematic Hero Controller
@@ -2794,7 +2799,13 @@ if (sensor == LOW) { drawHologram(); }</code></pre>
 
         revealElements.forEach(el => revealObserver.observe(el));
 
+        // Add keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                switchView('hub');
+            }
+        });
+
     </script>
 </body>
-
 </html>
