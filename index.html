@@ -741,6 +741,7 @@
             flex-direction: column;
             justify-content: space-between;
             box-shadow: var(--shadow);
+            animation: RoboFade_In 0.8s ease-out backwards;
         }
 
         .card::before {
@@ -1259,6 +1260,343 @@
             }
         }
 
+        /* === PROJECT-BASED ANIMATION SUITE === */
+
+        /* General Robotics Website Animations */
+        @keyframes RoboFade_In {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes TechSlide_Up {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes CircuitGlow {
+            0% {
+                border-color: var(--border);
+                box-shadow: none;
+            }
+
+            50% {
+                border-color: var(--accent);
+                box-shadow: 0 0 15px var(--accent-soft);
+            }
+
+            100% {
+                border-color: var(--border);
+                box-shadow: none;
+            }
+        }
+
+        @keyframes BotHoverLift {
+            to {
+                transform: translateY(-12px);
+                box-shadow: var(--shadow-hover);
+            }
+        }
+
+        @keyframes DigitalPulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes AutoType-AI {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes NeonScan {
+            0% {
+                left: -100%;
+                top: -100%;
+            }
+
+            100% {
+                left: 100%;
+                top: 100%;
+            }
+        }
+
+        /* Medicine OX Pro Animations */
+        @keyframes ServoSwing {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(45deg);
+            }
+        }
+
+        @keyframes PillDrop_Motion {
+            0% {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes HealthPulse {
+            0% {
+                transform: scale(1);
+                filter: brightness(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+                filter: brightness(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+                filter: brightness(1);
+            }
+        }
+
+        @keyframes TimeTick_RTC {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes AlertBlink {
+
+            0%,
+            100% {
+                background: transparent;
+            }
+
+            50% {
+                background: rgba(239, 68, 68, 0.2);
+            }
+        }
+
+        /* CNC Pen Plotter Animations */
+        @keyframes DrawLine_Flow {
+            0% {
+                stroke-dashoffset: 1000;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes AxisMove_XY {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            25% {
+                transform: translate(20px, 0);
+            }
+
+            50% {
+                transform: translate(20px, 20px);
+            }
+
+            75% {
+                transform: translate(0, 20px);
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        @keyframes InkTrace {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            100% {
+                opacity: 0.2;
+                transform: scale(1.5);
+            }
+        }
+
+        @keyframes SketchReveal {
+            from {
+                clip-path: inset(0 100% 0 0);
+            }
+
+            to {
+                clip-path: inset(0 0 0 0);
+            }
+        }
+
+        /* Smart Trash Bin Animations */
+        @keyframes LidOpen_Servo {
+            from {
+                transform: rotateX(0deg);
+            }
+
+            to {
+                transform: rotateX(-110deg);
+            }
+        }
+
+        @keyframes WaveDetect {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(10px) rotate(10deg);
+            }
+        }
+
+        @keyframes CleanDrop {
+            0% {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+        }
+
+        /* RFID Attendance System Animations */
+        @keyframes CardTap_Scan {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(0.9) translateY(5px);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes AccessGranted_Glow {
+            0% {
+                box-shadow: 0 0 0px #10b981;
+            }
+
+            50% {
+                box-shadow: 0 0 20px #10b981;
+            }
+
+            100% {
+                box-shadow: 0 0 0px #10b981;
+            }
+        }
+
+        @keyframes DataSync_Flow {
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-40px);
+                opacity: 0;
+            }
+        }
+
+        /* Utility Classes for immediate use */
+        .ani_robo_fade {
+            animation: RoboFade_In 0.8s ease-out forwards;
+        }
+
+        .ani_tech_slide {
+            animation: TechSlide_Up 0.8s var(--transition) forwards;
+        }
+
+        .ani_circuit_glow {
+            animation: CircuitGlow 3s infinite;
+        }
+
+        .ani_digital_pulse {
+            animation: DigitalPulse 2s infinite;
+        }
+
+        .ani_health_pulse {
+            animation: HealthPulse 1.5s infinite;
+        }
+
+        .ani_alert_blink {
+            animation: AlertBlink 1s infinite;
+        }
+
+        .ani_data_sync {
+            animation: DataSync_Flow 2s infinite;
+        }
+
+        .ani_servo_swing {
+            animation: ServoSwing 2s infinite ease-in-out;
+        }
+
+        .ani_neon_scan {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ani_neon_scan::after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: NeonScan 4s infinite;
+        }
+
         /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 1024px) {
             .grid {
@@ -1304,32 +1642,55 @@
 
             /* Hub Mobile */
             #hub nav {
-                padding: 1rem 5%;
+                padding: 1.25rem 5%;
                 flex-direction: column;
-                gap: 10px;
+                gap: 15px;
                 text-align: center;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .logo {
+                justify-content: center;
             }
 
             .hub-hero {
-                padding: 140px 5% 60px;
+                padding: 180px 5% 60px;
+                min-height: auto;
+            }
+
+            .reveal[style*="background: var(--section-bg)"] {
+                flex-direction: column;
+                gap: 15px !important;
+                padding: 25px !important;
+                border-radius: 24px !important;
+                width: 100%;
             }
 
             .hub-hero h1 {
-                font-size: 2.8rem;
+                font-size: 2.25rem;
+                margin-bottom: 20px;
             }
 
             .hub-hero p {
-                font-size: 1rem;
+                font-size: 0.95rem;
+                opacity: 0.8;
+                margin-bottom: 35px;
             }
 
             .hub-hero .reveal[style*="display: flex"] {
                 flex-direction: column;
                 width: 100%;
-                gap: 15px !important;
+                gap: 12px !important;
             }
 
             .hub-hero button {
                 width: 100%;
+                padding: 16px !important;
             }
 
             /* Grid Mobile */
@@ -1345,11 +1706,26 @@
 
             /* About Mobile */
             #about {
-                padding: 60px 5% !important;
+                padding: 80px 5% !important;
             }
 
             #about div[style*="background: var(--section-bg)"] {
-                padding: 30px !important;
+                padding: 25px !important;
+                border-radius: 24px !important;
+            }
+
+            #about div[style*="background: #0f172a"] {
+                padding: 15px !important;
+                font-size: 0.75rem !important;
+                margin-bottom: 30px !important;
+            }
+
+            #about h2 {
+                font-size: 2rem !important;
+            }
+
+            #about a[style*="font-size: 1.5rem"] {
+                font-size: 1.1rem !important;
             }
 
             /* Project Details Mobile */
@@ -1396,15 +1772,31 @@
 
         @media (max-width: 480px) {
             .hub-hero h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
             .ad-label {
-                font-size: 1.8rem !important;
+                font-size: 1.6rem !important;
+                letter-spacing: 6px !important;
             }
 
             .logo {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+            }
+
+            .view-project-btn {
+                opacity: 0.8;
+                transform: translateX(0);
+                font-size: 0.8rem;
+            }
+
+            footer {
+                padding: 60px 5% 40px !important;
+            }
+
+            footer div[style*="display: grid"] {
+                grid-template-columns: 1fr !important;
+                gap: 40px !important;
             }
         }
     </style>
@@ -1483,7 +1875,7 @@
             </div>
             <div style="display: flex; align-items: center; gap: 20px;">
                 <div
-                    style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent-2); display: flex; align-items: center; gap: 6px; background: var(--accent-2-soft); padding: 4px 12px; border-radius: 100px; border: 1px solid rgba(255, 152, 0, 0.2);">
+                    style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent-2); display: flex; align-items: center; gap: 6px; background: var(--accent-2-soft); padding: 4px 12px; border-radius: 100px; border: 1px solid rgba(255, 152, 0, 0.2); animation: DigitalPulse 2s infinite;">
                     <span
                         style="width: 6px; height: 6px; background: var(--accent-2); border-radius: 50%; animation: pulse 2s infinite;"></span>
                     CORE ACTIVE
@@ -1586,9 +1978,9 @@
 
         <div class="grid">
             <!-- Cards (Project Images removed for Home Page as requested) -->
-            <div class="card reveal" onclick="switchView('med-pro')">
+            <div class="card reveal ani_health_pulse" onclick="switchView('med-pro')">
                 <div class="card-info">
-                    <i class="fa-solid fa-robot"></i>
+                    <i class="fa-solid fa-robot ani_health_pulse"></i>
                     <span class="meta">Robotics 01</span>
                     <h2>Medicine OX Pro</h2>
                     <p>Autonomous medical delivery robot featuring advanced line-following navigation, RTC-based
@@ -1606,9 +1998,9 @@
                 <div class="view-project-btn">PROJECT INTEL <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
-            <div class="card reveal" onclick="switchView('rfid-sys')">
+            <div class="card reveal ani_circuit_glow" onclick="switchView('rfid-sys')">
                 <div class="card-info">
-                    <i class="fa-solid fa-id-card"></i>
+                    <i class="fa-solid fa-id-card ani_card_tap"></i>
                     <span class="meta">IoT Security 02</span>
                     <h2>RFID Matrix</h2>
                     <p>Cloud-integrated ESP32 attendance system with MFRC522 RFID reader, real-time WiFi logging to
@@ -1626,9 +2018,9 @@
                 <div class="view-project-btn">PROJECT INTEL <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
-            <div class="card reveal" onclick="switchView('pov-sys')">
+            <div class="card reveal ani_neon_scan" onclick="switchView('pov-sys')">
                 <div class="card-info">
-                    <i class="fa-solid fa-bolt"></i>
+                    <i class="fa-solid fa-bolt ani_digital_pulse"></i>
                     <span class="meta">Embedded 03</span>
                     <h2>POV Visualizer</h2>
                     <p>High-speed rotating LED display exploiting persistence of vision phenomenon to create holographic
@@ -1648,9 +2040,9 @@
                 <div class="view-project-btn">PROJECT INTEL <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
-            <div class="card reveal" onclick="switchView('eco-sys')">
+            <div class="card reveal ani_lid_open" onclick="switchView('eco-sys')">
                 <div class="card-info">
-                    <i class="fa-solid fa-recycle"></i>
+                    <i class="fa-solid fa-recycle ani_servo_swing"></i>
                     <span class="meta">Automation 04</span>
                     <h2>Eco-Bin AI</h2>
                     <p>Intelligent touchless waste management system utilizing ultrasonic proximity detection,
@@ -1668,9 +2060,9 @@
                 <div class="view-project-btn">PROJECT INTEL <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
-            <div class="card reveal" onclick="switchView('hydro-sys')">
+            <div class="card reveal ani_digital_pulse" onclick="switchView('hydro-sys')">
                 <div class="card-info">
-                    <i class="fa-solid fa-droplet"></i>
+                    <i class="fa-solid fa-droplet ani_digital_pulse"></i>
                     <span class="meta">Hygiene 05</span>
                     <h2>Hydro-Sense</h2>
                     <p>IR-triggered automated water dispensing system with solid-state relay control, instantaneous flow
@@ -1689,9 +2081,9 @@
                 <div class="view-project-btn">PROJECT INTEL <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
-            <div class="card reveal" onclick="switchView('cnc-sys')">
+            <div class="card reveal ani_circuit_glow" onclick="switchView('cnc-sys')">
                 <div class="card-info">
-                    <i class="fa-solid fa-pen-nib"></i>
+                    <i class="fa-solid fa-pen-nib ani_servo_swing"></i>
                     <span class="meta">CNC 06</span>
                     <h2>CNC Plotter</h2>
                     <p>Precision 2-axis computer numerical control drawing machine with G-code interpretation, stepper
@@ -1805,7 +2197,8 @@
                                     <span style="color: #888;">> Scanning neural modules...</span> <span
                                         style="color: #27c93f;">OK</span><br>
                                     <span style="color: #6366f1;">$</span> m-mech info --status<br>
-                                    <span style="color: #888;">> Location: Kerala, IND | Field: Robotics</span><br>
+                                    <span style="color: #888;">> Location: Naduvil, Kannur, Kerala | Field:
+                                        Robotics</span><br>
                                     <span style="color: #6366f1;">$</span> current_mission<br>
                                     <span style="color: #ff9800;">> "Building modular solutions for a smarter
                                         tomorrow."</span><br>
@@ -1879,7 +2272,11 @@
                     </div>
                     <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.8;">
                         Exploring the frontier of autonomous systems and modular robotics. Precision engineered for the
-                        next generation.
+                        next generation.<br>
+                        <span style="font-size: 0.85rem; opacity: 0.8; margin-top: 10px; display: inline-block;">
+                            <i class="fa-solid fa-location-dot" style="color: var(--accent); margin-right: 6px;"></i>
+                            Naduvil, Kannur District, Kerala, India
+                        </span>
                     </p>
                 </div>
                 <div>
@@ -2396,6 +2793,7 @@ if (sensor == LOW) { drawHologram(); }</code></pre>
         }, { threshold: 0.1 });
 
         revealElements.forEach(el => revealObserver.observe(el));
+
     </script>
 </body>
 
