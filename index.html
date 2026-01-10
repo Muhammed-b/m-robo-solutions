@@ -4,7 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M MECH | Robotic Innovation Portfolio</title>
+    <meta name="description" content="M MECH - Professional Robotics Engineering and Embedded Systems Solutions. Specializing in IoT, Automation, CNC Systems, and Medical Robotics. Arduino classes for Little Kites members and school students.">
+    <meta name="keywords" content="robotics, embedded systems, IoT, Arduino, ESP32, automation, CNC, medical robotics, engineering, Arduino classes, Little Kites, school students, electronics, coding">
+    <meta name="author" content="Muhammed - M MECH">
+    <meta property="og:title" content="M MECH | Robotic Innovation Portfolio">
+    <meta property="og:description" content="Professional Robotics Engineering and Embedded Systems Solutions with Arduino classes for students">
+    <meta property="og:type" content="website">
+    <title>M MECH | Robotic Innovation Portfolio & Arduino Classes</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Icons -->
@@ -95,6 +102,237 @@
             100% { transform: translateY(50px) translateX(50px); }
         }
 
+        /* Arduino Ad Banner Styles */
+        .ad-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--accent-3), var(--accent-2));
+            color: white;
+            padding: 0.75rem 0;
+            z-index: 10001;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .ad-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .ad-icon {
+            font-size: 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .ad-text {
+            flex: 1;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .ad-text strong {
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 0.25rem;
+        }
+
+        .ad-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+
+        .ad-btn {
+            padding: 0.5rem 1.25rem;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .ad-close {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .ad-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        /* Hero Badges Container */
+        .hero-badges {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .arduino-badge {
+            background: linear-gradient(135deg, var(--accent-3), var(--accent-2));
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+            }
+        }
+
+        /* Arduino Classes Section */
+        .arduino-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(6, 182, 212, 0.05));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .arduino-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .arduino-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .arduino-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .arduino-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-3);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.2);
+        }
+
+        .arduino-icon {
+            font-size: 3rem;
+            color: var(--accent-3);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            padding: 1rem;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .arduino-details h3 {
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .arduino-details ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .arduino-details li {
+            margin-bottom: 0.75rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .arduino-details li i {
+            color: var(--accent-3);
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        .arduino-cta {
+            text-align: center;
+            padding: 3rem;
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 2px solid var(--accent-3);
+            position: relative;
+            z-index: 1;
+            margin-top: 3rem;
+        }
+
+        .arduino-cta h3 {
+            font-size: 2rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .arduino-cta p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .arduino-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         /* Cinematic Intro */
         #cinematic-intro {
             position: fixed;
@@ -158,7 +396,7 @@
         /* Navigation */
         .main-nav {
             position: fixed;
-            top: 0;
+            top: 60px;
             width: 100%;
             padding: 1.5rem 2rem;
             display: flex;
@@ -168,6 +406,7 @@
             backdrop-filter: blur(10px);
             z-index: 1000;
             border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+            transition: top 0.3s ease;
         }
 
         .nav-logo {
@@ -224,6 +463,94 @@
 
         .nav-link:hover::after {
             width: 100%;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: var(--section-bg);
+            backdrop-filter: blur(20px);
+            z-index: 2000;
+            transition: right 0.3s ease;
+            padding: 5rem 2rem 2rem;
+            border-left: 1px solid var(--border);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu .nav-link {
+            display: block;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 1.1rem;
+        }
+
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
         }
 
         /* Hero Section */
@@ -353,32 +680,277 @@
             background: var(--card-bg);
             border-radius: 20px;
             overflow: hidden;
-            transition: var(--transition);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             border: 1px solid var(--border);
             position: relative;
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            animation: projectCardEntrance 0.6s ease-out forwards;
+        }
+
+        @keyframes projectCardEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .project-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .project-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .project-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .project-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .project-card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .project-card:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(6, 182, 212, 0.1));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px) scale(1.02);
             border-color: var(--accent);
-            box-shadow: var(--shadow-hover);
+            box-shadow: 0 25px 60px -15px rgba(59, 130, 246, 0.4);
         }
 
         .project-image {
             height: 200px;
             width: 100%;
             overflow: hidden;
+            position: relative;
+        }
+
+        .project-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1;
+        }
+
+        .project-card:hover .project-image::after {
+            opacity: 1;
         }
 
         .project-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            filter: brightness(0.9);
         }
 
         .project-card:hover .project-image img {
-            transform: scale(1.1);
+            transform: scale(1.15) rotate(1deg);
+            filter: brightness(1.1);
+        }
+
+        /* Icon-based Project Images */
+        .project-icon-container {
+            height: 200px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(6, 182, 212, 0.2));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-icon-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            animation: iconGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes iconGlow {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+        }
+
+        .project-icon {
+            font-size: 5rem;
+            color: var(--accent);
+            z-index: 2;
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            filter: drop-shadow(0 4px 20px rgba(59, 130, 246, 0.3));
+        }
+
+        .project-card:hover .project-icon {
+            transform: scale(1.2) rotate(5deg);
+            color: var(--accent-2);
+            filter: drop-shadow(0 8px 30px rgba(6, 182, 212, 0.5));
+        }
+
+        .project-icon-container.trash-icon {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(6, 182, 212, 0.2));
+        }
+
+        .project-icon-container.water-icon {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(14, 165, 233, 0.2));
+        }
+
+        .project-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-category {
+            display: inline-block;
+            padding: 0.25rem 1rem;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            animation: categoryPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes categoryPulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 5px rgba(59, 130, 246, 0);
+            }
+        }
+
+        .project-card:hover .project-category {
+            background: rgba(59, 130, 246, 0.2);
+            transform: scale(1.05);
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+            transition: color 0.3s ease;
+        }
+
+        .project-card:hover .project-title {
+            color: var(--accent-2);
+        }
+
+        .tech-tag {
+            padding: 0.25rem 0.75rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            display: inline-block;
+            animation: tagFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes tagFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-2px);
+            }
+        }
+
+        .project-card:hover .tech-tag {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.2);
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .project-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.4s ease;
+        }
+
+        .project-link i {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .project-card:hover .project-link {
+            gap: 1rem;
+            color: var(--accent-2);
+        }
+
+        .project-card:hover .project-link::after {
+            width: 100%;
+        }
+
+        .project-card:hover .project-link i {
+            transform: translateX(5px) rotate(0deg);
         }
 
         .project-content {
@@ -682,7 +1254,124 @@
             transform: translateY(0);
         }
 
-        /* Responsive Design */
+
+        /* Certifications Section */
+        .certifications-section {
+            padding: 6rem 0;
+            background: var(--section-bg);
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .cert-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .cert-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .cert-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .cert-issuer {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Project Filter */
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--gradient);
+            border-color: transparent;
+            color: white;
+        }
+
+        /* Newsletter Section */
+        .newsletter-section {
+            padding: 4rem 0;
+            background: var(--section-bg);
+            text-align: center;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 2rem auto 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 1rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text);
+            font-family: var(--font-body);
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        /* Loading Spinner */
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Mobile Responsive */
         @media (max-width: 1024px) {
             .about-content {
                 grid-template-columns: 1fr;
@@ -691,6 +1380,10 @@
             
             .hero-title {
                 font-size: 3rem;
+            }
+            
+            .ad-content {
+                padding: 0 1rem;
             }
         }
 
@@ -701,10 +1394,15 @@
             
             .main-nav {
                 padding: 1rem;
+                top: 100px;
             }
             
             .nav-links {
                 display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
             }
             
             .projects-grid {
@@ -712,7 +1410,7 @@
             }
             
             .hero {
-                padding: 6rem 1rem 2rem;
+                padding: 8rem 1rem 2rem;
             }
             
             .hero-buttons {
@@ -735,6 +1433,49 @@
             .skills-grid {
                 grid-template-columns: 1fr;
             }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 45px;
+                height: 45px;
+            }
+            
+            .ad-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .ad-actions {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .ad-text {
+                font-size: 0.9rem;
+            }
+
+            .arduino-card {
+                padding: 1.5rem;
+            }
+
+            .arduino-cta {
+                padding: 2rem 1rem;
+            }
+
+            .arduino-buttons {
+                flex-direction: column;
+            }
+
+            .arduino-buttons .btn {
+                width: 100%;
+                justify-content: center;
+            }
         }
 
         @media (max-width: 480px) {
@@ -745,6 +1486,23 @@
             .footer-content {
                 grid-template-columns: 1fr;
             }
+            
+            .ad-banner {
+                padding: 0.5rem 0;
+            }
+
+            .ad-text {
+                font-size: 0.8rem;
+            }
+
+            .main-nav {
+                top: 90px;
+            }
+            
+            .hero-badges {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
@@ -753,6 +1511,26 @@
     <!-- Stellar Background -->
     <div class="stellar-bg"></div>
     <div class="grid-overlay"></div>
+
+    <!-- Arduino Classes Advertisement Banner -->
+    <div class="ad-banner" id="ad-banner">
+        <div class="ad-content">
+            <div class="ad-icon">
+                <i class="fas fa-microchip"></i>
+            </div>
+            <div class="ad-text">
+                <strong>🚀 Arduino Classes Now Available!</strong> We provide Arduino classes for Little Kites members and all school students (Classes 5–10) to learn electronics, coding, and robotics in a simple, activity-based way.
+            </div>
+            <div class="ad-actions">
+                <a href="tel:+919447405778" class="btn btn-primary ad-btn">
+                    <i class="fas fa-phone"></i> Enquire Now
+                </a>
+                <button class="ad-close" onclick="closeAdBanner()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Cinematic Intro -->
     <div id="cinematic-intro">
@@ -768,7 +1546,7 @@
         </div>
     </div>
 
-    <!-- Main Content -->
+    <!-- Main Navigation -->
     <nav class="main-nav">
         <a href="#home" class="nav-logo">
             <div class="logo-icon">M</div>
@@ -776,6 +1554,7 @@
         </a>
         <div class="nav-links">
             <a href="#home" class="nav-link">Home</a>
+            <a href="#arduino-classes" class="nav-link">Arduino Classes</a>
             <a href="#projects" class="nav-link">Projects</a>
             <a href="#about" class="nav-link">About</a>
             <a href="#contact" class="nav-link">Contact</a>
@@ -783,16 +1562,42 @@
                 <i class="fas fa-phone"></i> Contact
             </a>
         </div>
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars" id="menu-icon"></i>
+        </button>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#home" class="nav-link" onclick="toggleMobileMenu()">Home</a>
+        <a href="#arduino-classes" class="nav-link" onclick="toggleMobileMenu()">Arduino Classes</a>
+        <a href="#projects" class="nav-link" onclick="toggleMobileMenu()">Projects</a>
+        <a href="#about" class="nav-link" onclick="toggleMobileMenu()">About</a>
+        <a href="#contact" class="nav-link" onclick="toggleMobileMenu()">Contact</a>
+        <a href="tel:+919447405778" class="btn btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;" onclick="toggleMobileMenu()">
+            <i class="fas fa-phone"></i> Call Now
+        </a>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="back-to-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
 
     <main>
         <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content animate-on-scroll">
-                    <span class="hero-badge">
-                        <i class="fas fa-bolt"></i> INNOVATION AT WORK
-                    </span>
+                    <div class="hero-badges">
+                        <span class="hero-badge">
+                            <i class="fas fa-bolt"></i> INNOVATION AT WORK
+                        </span>
+                        <span class="hero-badge arduino-badge" onclick="scrollToArduinoAd()" style="cursor: pointer;">
+                            <i class="fas fa-graduation-cap"></i> ARDUINO CLASSES AVAILABLE
+                        </span>
+                    </div>
                     <h1 class="hero-title">
                         Engineering the Future with<br>
                         <span style="display: inline-block; animation: float 3s ease-in-out infinite;">Robotic Precision</span>
@@ -808,6 +1613,83 @@
                         </a>
                         <a href="#contact" class="btn btn-secondary">
                             <i class="fas fa-comment"></i> Get in Touch
+                        </a>
+                        <a href="#" class="btn btn-secondary" onclick="downloadResume(event)">
+                            <i class="fas fa-download"></i> Download Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Arduino Classes Section -->
+        <section id="arduino-classes" class="arduino-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <h2 class="section-title">
+                        <i class="fas fa-microchip"></i> Arduino Learning Programs
+                    </h2>
+                    <p class="section-subtitle">
+                        Hands-on electronics, coding, and robotics classes designed for school students
+                    </p>
+                </div>
+
+                <div class="arduino-content">
+                    <div class="arduino-card animate-on-scroll">
+                        <div class="arduino-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="arduino-details">
+                            <h3>Who Can Join?</h3>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Little Kites Members</li>
+                                <li><i class="fas fa-check-circle"></i> All School Students (Classes 5–10)</li>
+                                <li><i class="fas fa-check-circle"></i> Beginners with no prior experience</li>
+                                <li><i class="fas fa-check-circle"></i> Students interested in technology</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="arduino-card animate-on-scroll">
+                        <div class="arduino-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="arduino-details">
+                            <h3>What You'll Learn</h3>
+                            <ul>
+                                <li><i class="fas fa-star"></i> Basic to Advanced Arduino Programming</li>
+                                <li><i class="fas fa-star"></i> Electronics Fundamentals</li>
+                                <li><i class="fas fa-star"></i> Sensor Integration & Robotics</li>
+                                <li><i class="fas fa-star"></i> Project-Based Learning</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="arduino-card animate-on-scroll">
+                        <div class="arduino-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <div class="arduino-details">
+                            <h3>Teaching Methodology</h3>
+                            <ul>
+                                <li><i class="fas fa-chalkboard-teacher"></i> Simple, Activity-Based Approach</li>
+                                <li><i class="fas fa-project-diagram"></i> Hands-on Practical Sessions</li>
+                                <li><i class="fas fa-users"></i> Small Batch Size</li>
+                                <li><i class="fas fa-certificate"></i> Certificate of Completion</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="arduino-cta animate-on-scroll">
+                    <h3>Start Your Robotics Journey Today!</h3>
+                    <p>Limited seats available. Contact now to schedule a free demo class.</p>
+                    <div class="arduino-buttons">
+                        <a href="tel:+919447405778" class="btn btn-primary">
+                            <i class="fas fa-phone"></i> Call: +91 9447405778
+                        </a>
+                        <a href="mailto:muhammedbnaduvil@gmail.com" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i> Email for Details
                         </a>
                     </div>
                 </div>
@@ -825,9 +1707,18 @@
                     </p>
                 </div>
 
+                <div class="project-filters animate-on-scroll">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+                    <button class="filter-btn" data-filter="iot">IoT</button>
+                    <button class="filter-btn" data-filter="visual">Visual Tech</button>
+                    <button class="filter-btn" data-filter="cnc">CNC</button>
+                    <button class="filter-btn" data-filter="automation">Automation</button>
+                </div>
+
                 <div class="projects-grid">
                     <!-- Project 1: Medicine OX Pro -->
-                    <div class="project-card animate-on-scroll">
+                    <div class="project-card animate-on-scroll" data-category="healthcare">
                         <div class="project-image">
                             <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Medicine OX Pro Medical Robot">
                         </div>
@@ -852,7 +1743,7 @@
                     </div>
 
                     <!-- Project 2: RFID Matrix -->
-                    <div class="project-card animate-on-scroll">
+                    <div class="project-card animate-on-scroll" data-category="iot">
                         <div class="project-image">
                             <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="RFID Matrix System">
                         </div>
@@ -877,7 +1768,7 @@
                     </div>
 
                     <!-- Project 3: POV Visualizer -->
-                    <div class="project-card animate-on-scroll">
+                    <div class="project-card animate-on-scroll" data-category="visual">
                         <div class="project-image">
                             <img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&fit=crop&w=800&q=80" alt="POV Visualizer LED Display">
                         </div>
@@ -902,7 +1793,7 @@
                     </div>
 
                     <!-- Project 4: CNC Plotter -->
-                    <div class="project-card animate-on-scroll">
+                    <div class="project-card animate-on-scroll" data-category="cnc">
                         <div class="project-image">
                             <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80" alt="CNC Plotter Machine">
                         </div>
@@ -921,6 +1812,56 @@
                                 <span class="tech-tag">Servo Control</span>
                             </div>
                             <a href="javascript:void(0)" class="project-link" onclick="showProject('cnc-sys')">
+                                View Complete Details <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: Smart Trash -->
+                    <div class="project-card animate-on-scroll" data-category="automation">
+                        <div class="project-icon-container trash-icon">
+                            <i class="fas fa-trash-alt project-icon"></i>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Smart Automation</span>
+                            <h3 class="project-title">Smart Trash System</h3>
+                            <p class="project-description">
+                                Intelligent waste management system with automatic lid opening using 
+                                ultrasonic sensor detection and Arduino-based control for hands-free operation.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Arduino</span>
+                                <span class="tech-tag">Ultrasonic Sensor</span>
+                                <span class="tech-tag">Servo Motor</span>
+                                <span class="tech-tag">LED Indicator</span>
+                                <span class="tech-tag">Power Management</span>
+                            </div>
+                            <a href="javascript:void(0)" class="project-link" onclick="showProject('smart-trash')">
+                                View Complete Details <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: Automatic Drinking Water System -->
+                    <div class="project-card animate-on-scroll" data-category="automation">
+                        <div class="project-icon-container water-icon">
+                            <i class="fas fa-tint project-icon"></i>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Smart Automation</span>
+                            <h3 class="project-title">Automatic Drinking Water System</h3>
+                            <p class="project-description">
+                                Touchless water dispensing system with automatic flow control, 
+                                level monitoring, and intelligent pump management for hygienic water access.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Arduino</span>
+                                <span class="tech-tag">Ultrasonic Sensor</span>
+                                <span class="tech-tag">Water Pump</span>
+                                <span class="tech-tag">Level Sensor</span>
+                                <span class="tech-tag">Relay Module</span>
+                            </div>
+                            <a href="javascript:void(0)" class="project-link" onclick="showProject('auto-water')">
                                 View Complete Details <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -989,6 +1930,86 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="certifications-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <h2 class="section-title">Certifications & Skills</h2>
+                    <p class="section-subtitle">
+                        Professional certifications and technical expertise
+                    </p>
+                </div>
+
+                <div class="certifications-grid">
+                    <div class="cert-card animate-on-scroll">
+                        <div class="cert-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3 class="cert-title">Arduino Programming</h3>
+                        <p class="cert-issuer">Advanced Embedded Systems</p>
+                    </div>
+
+                    <div class="cert-card animate-on-scroll">
+                        <div class="cert-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3 class="cert-title">ESP32 IoT Development</h3>
+                        <p class="cert-issuer">Cloud Integration Specialist</p>
+                    </div>
+
+                    <div class="cert-card animate-on-scroll">
+                        <div class="cert-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3 class="cert-title">Robotics & Automation</h3>
+                        <p class="cert-issuer">Motion Control Systems</p>
+                    </div>
+
+                    <div class="cert-card animate-on-scroll">
+                        <div class="cert-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3 class="cert-title">CNC Programming</h3>
+                        <p class="cert-issuer">G-code & Precision Control</p>
+                    </div>
+
+                    <div class="cert-card animate-on-scroll">
+                        <div class="cert-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3 class="cert-title">Sensor Integration</h3>
+                        <p class="cert-issuer">Advanced Sensor Systems</p>
+                    </div>
+
+                    <div class="cert-card animate-on-scroll">
+                        <div class="cert-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3 class="cert-title">Python Programming</h3>
+                        <p class="cert-issuer">Data Processing & Automation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <h2 class="section-title">Stay Updated</h2>
+                    <p class="section-subtitle">
+                        Subscribe to our newsletter for latest projects and robotics insights
+                    </p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm" onsubmit="subscribeNewsletter(event)">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Subscribe
+                    </button>
+                </form>
             </div>
         </section>
 
@@ -1116,6 +2137,9 @@
                         <a href="#home" style="color: var(--text-light); text-decoration: none; transition: var(--transition);">
                             <i class="fas fa-chevron-right" style="margin-right: 0.5rem;"></i> Home
                         </a>
+                        <a href="#arduino-classes" style="color: var(--text-light); text-decoration: none; transition: var(--transition);">
+                            <i class="fas fa-chevron-right" style="margin-right: 0.5rem;"></i> Arduino Classes
+                        </a>
                         <a href="#projects" style="color: var(--text-light); text-decoration: none; transition: var(--transition);">
                             <i class="fas fa-chevron-right" style="margin-right: 0.5rem;"></i> Projects
                         </a>
@@ -1147,7 +2171,7 @@
                             CNC Systems
                         </span>
                         <span style="padding: 0.25rem 0.75rem; background: rgba(255,255,255,0.05); border-radius: 4px; font-size: 0.8rem; color: var(--text-light); border: 1px solid var(--border);">
-                            POV Displays
+                            Arduino Classes
                         </span>
                     </div>
                 </div>
@@ -1175,6 +2199,34 @@
     </div>
 
     <script>
+        // Arduino Ad Functions
+        function closeAdBanner() {
+            const adBanner = document.getElementById('ad-banner');
+            adBanner.style.transition = 'all 0.5s ease';
+            adBanner.style.transform = 'translateY(-100%)';
+            adBanner.style.opacity = '0';
+            
+            // Adjust main-nav position
+            document.querySelector('.main-nav').style.top = '0';
+            
+            setTimeout(() => {
+                adBanner.style.display = 'none';
+            }, 500);
+            
+            // Store in localStorage to remember user's choice
+            localStorage.setItem('adBannerClosed', 'true');
+        }
+
+        function scrollToArduinoAd() {
+            const arduinoSection = document.getElementById('arduino-classes');
+            if (arduinoSection) {
+                window.scrollTo({
+                    top: arduinoSection.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
         // Remove cinematic intro after 3 seconds
         setTimeout(() => {
             const intro = document.getElementById('cinematic-intro');
@@ -1184,6 +2236,157 @@
                 intro.style.display = 'none';
             }, 1000);
         }, 3000);
+
+        // Check if user previously closed the ad
+        document.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('adBannerClosed') === 'true') {
+                document.getElementById('ad-banner').style.display = 'none';
+                document.querySelector('.main-nav').style.top = '0';
+            }
+        });
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const overlay = document.querySelector('.mobile-menu-overlay');
+            const icon = document.getElementById('menu-icon');
+            
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            
+            if (menu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        // Back to Top Button
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Enhanced Project Card Animations
+        document.querySelectorAll('.project-card').forEach((card, index) => {
+            // Add staggered entrance animation
+            card.style.animationDelay = `${index * 0.15}s`;
+            
+            // Add parallax effect on scroll
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0) scale(1)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cardObserver.observe(card);
+            
+            // Add mouse move parallax effect
+            card.addEventListener('mousemove', function(e) {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const moveX = (x - centerX) / 20;
+                const moveY = (y - centerY) / 20;
+                
+                const image = card.querySelector('.project-image img');
+                const icon = card.querySelector('.project-icon');
+                
+                if (image) {
+                    image.style.transform = `scale(1.15) translate(${moveX}px, ${moveY}px) rotate(1deg)`;
+                }
+                if (icon) {
+                    icon.style.transform = `scale(1.2) translate(${moveX/2}px, ${moveY/2}px) rotate(5deg)`;
+                }
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                const image = card.querySelector('.project-image img');
+                const icon = card.querySelector('.project-icon');
+                
+                if (image) {
+                    image.style.transform = 'scale(1) translate(0, 0) rotate(0deg)';
+                }
+                if (icon) {
+                    icon.style.transform = 'scale(1) translate(0, 0) rotate(0deg)';
+                }
+            });
+        });
+
+        // Project Filtering
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                const projects = document.querySelectorAll('.project-card');
+                
+                projects.forEach(project => {
+                    if (filter === 'all' || project.getAttribute('data-category') === filter) {
+                        project.style.display = 'block';
+                        setTimeout(() => {
+                            project.style.opacity = '1';
+                            project.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        project.style.opacity = '0';
+                        project.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            project.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Newsletter Subscription
+        function subscribeNewsletter(event) {
+            event.preventDefault();
+            const form = event.target;
+            const email = form.querySelector('input[type="email"]').value;
+            const button = form.querySelector('button');
+            const originalText = button.innerHTML;
+            
+            button.innerHTML = '<span class="loading-spinner"></span> Subscribing...';
+            button.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                alert('Thank you for subscribing! You will receive updates about our latest projects.');
+                form.reset();
+                button.innerHTML = originalText;
+                button.disabled = false;
+            }, 1500);
+        }
+
+        // Download Resume Function
+        function downloadResume(event) {
+            event.preventDefault();
+            alert('Resume download will be available soon! For now, please contact me directly for my resume.');
+        }
 
         // Scroll animations
         const observerOptions = {
@@ -1195,11 +2398,16 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
         }, observerOptions);
 
         document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
         });
 
@@ -1220,24 +2428,90 @@
             });
         });
 
-        // Form submission
+        // Enhanced Form Validation and Submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value
-            };
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
             
-            // Here you would typically send the data to a server
-            // For now, we'll just show a success message
-            alert('Thank you for your message! I will get back to you soon.');
+            // Validation
+            if (!name || name.length < 2) {
+                showFormError('Please enter a valid name (at least 2 characters)');
+                return;
+            }
             
-            // Reset form
-            this.reset();
+            if (!email || !isValidEmail(email)) {
+                showFormError('Please enter a valid email address');
+                return;
+            }
+            
+            if (!message || message.length < 10) {
+                showFormError('Please enter a message (at least 10 characters)');
+                return;
+            }
+            
+            // Show loading state
+            submitBtn.innerHTML = '<span class="loading-spinner"></span> Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                // Here you would typically send the data to a server
+                showFormSuccess('Thank you for your message! I will get back to you soon.');
+                
+                // Reset form
+                this.reset();
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            }, 2000);
         });
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function showFormError(message) {
+            const form = document.getElementById('contactForm');
+            let errorDiv = form.querySelector('.form-error');
+            
+            if (!errorDiv) {
+                errorDiv = document.createElement('div');
+                errorDiv.className = 'form-error';
+                errorDiv.style.cssText = 'background: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444; color: #ef4444; padding: 1rem; border-radius: 10px; margin-bottom: 1rem;';
+                form.insertBefore(errorDiv, form.firstChild);
+            }
+            
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+            
+            setTimeout(() => {
+                errorDiv.style.display = 'none';
+            }, 5000);
+        }
+
+        function showFormSuccess(message) {
+            const form = document.getElementById('contactForm');
+            let successDiv = form.querySelector('.form-success');
+            
+            if (!successDiv) {
+                successDiv = document.createElement('div');
+                successDiv.className = 'form-success';
+                successDiv.style.cssText = 'background: rgba(16, 185, 129, 0.1); border: 1px solid #10b981; color: #10b981; padding: 1rem; border-radius: 10px; margin-bottom: 1rem;';
+                form.insertBefore(successDiv, form.firstChild);
+            }
+            
+            successDiv.textContent = message;
+            successDiv.style.display = 'block';
+            
+            setTimeout(() => {
+                successDiv.style.display = 'none';
+            }, 5000);
+        }
 
         // Project modal functions with detailed information
         function showProject(projectId) {
@@ -1383,6 +2657,83 @@
                     ],
                     tech: ['Arduino Uno', 'CNC Shield', 'Stepper Motors', 'G-code', 'Servo Control', 'GRBL firmware', 'Pololu Drivers'],
                     image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80'
+                },
+                'smart-trash': {
+                    title: 'Smart Trash System',
+                    category: 'Smart Automation',
+                    description: 'Intelligent waste management system with automatic lid opening using ultrasonic sensor detection and Arduino-based control for hands-free operation.',
+                    detailedDescription: 'The Smart Trash System is an automated waste management solution that opens the lid automatically when it detects a person approaching. Using an HC-SR04 ultrasonic sensor, the system measures the distance to nearby objects and triggers a servo motor to open the lid. This touchless design promotes hygiene and convenience, especially in public spaces.',
+                    features: [
+                        'HC-SR04 ultrasonic sensor for proximity detection',
+                        'Automatic lid opening via servo motor',
+                        'Adjustable detection range (5-30cm)',
+                        'LED indicator for system status',
+                        'Auto-close mechanism after use',
+                        'Low power consumption design',
+                        'Compact Arduino-based control',
+                        'Easy installation and maintenance'
+                    ],
+                    specifications: [
+                        'Detection range: 5-30cm (adjustable)',
+                        'Response time: < 0.5 seconds',
+                        'Servo motor: SG90 (180° rotation)',
+                        'Controller: Arduino Uno/Nano',
+                        'Power supply: 5V DC (USB or adapter)',
+                        'Operating temperature: 0-50°C',
+                        'Lid opening angle: 90-120°',
+                        'Auto-close delay: 3-5 seconds'
+                    ],
+                    applications: [
+                        'Home automation',
+                        'Public restrooms',
+                        'Office spaces',
+                        'Restaurants and cafes',
+                        'Hospitals and clinics',
+                        'Educational institutions'
+                    ],
+                    tech: ['Arduino Uno', 'HC-SR04 Ultrasonic Sensor', 'SG90 Servo Motor', 'LED Indicators', 'Power Management', 'Breadboard', 'Jumper Wires'],
+                    image: 'icon',
+                    icon: 'fa-trash-alt',
+                    iconColor: '#10b981'
+                },
+                'auto-water': {
+                    title: 'Automatic Drinking Water System',
+                    category: 'Smart Automation',
+                    description: 'Touchless water dispensing system with automatic flow control, level monitoring, and intelligent pump management for hygienic water access.',
+                    detailedDescription: 'The Automatic Drinking Water System provides a hygienic, touchless solution for water dispensing. Using ultrasonic sensors to detect when a container is placed, the system automatically activates a water pump to dispense water. The system includes water level monitoring to prevent overflow and ensure optimal operation. An Arduino microcontroller manages all operations with precision timing and safety features.',
+                    features: [
+                        'Touchless operation using ultrasonic sensor',
+                        'Automatic water pump control',
+                        'Water level monitoring and overflow prevention',
+                        'Adjustable dispensing time',
+                        'LED status indicators',
+                        'Low water level warning system',
+                        'Relay-based pump control',
+                        'Energy-efficient operation'
+                    ],
+                    specifications: [
+                        'Detection range: 2-15cm',
+                        'Pump flow rate: 1-3 L/min (adjustable)',
+                        'Controller: Arduino Uno',
+                        'Pump: 12V DC submersible pump',
+                        'Power supply: 12V 2A adapter',
+                        'Water level sensor: Ultrasonic HC-SR04',
+                        'Relay module: 5V single channel',
+                        'Operating voltage: 5V (Arduino), 12V (Pump)'
+                    ],
+                    applications: [
+                        'Home water dispensers',
+                        'Office water coolers',
+                        'Public water stations',
+                        'Restaurants and cafes',
+                        'Hospitals and healthcare facilities',
+                        'Educational institutions',
+                        'Smart home integration'
+                    ],
+                    tech: ['Arduino Uno', 'HC-SR04 Ultrasonic Sensor', '12V DC Water Pump', '5V Relay Module', 'Water Level Sensor', 'LED Indicators', 'Power Supply'],
+                    image: 'icon',
+                    icon: 'fa-tint',
+                    iconColor: '#3b82f6'
                 }
             };
 
@@ -1399,7 +2750,14 @@
                     </h2>
                     
                     <div style="margin: 2rem 0;">
-                        <img src="${project.image}" alt="${project.title}" style="width: 100%; height: 300px; object-fit: cover; border-radius: 15px; margin-bottom: 2rem;">
+                        ${project.image === 'icon' ? `
+                            <div style="width: 100%; height: 300px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(6, 182, 212, 0.2)); border-radius: 15px; margin-bottom: 2rem; position: relative; overflow: hidden;">
+                                <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%); animation: iconGlow 3s ease-in-out infinite;"></div>
+                                <i class="fas ${project.icon}" style="font-size: 8rem; color: ${project.iconColor || 'var(--accent)'}; z-index: 2; position: relative; filter: drop-shadow(0 8px 30px ${project.iconColor || 'rgba(59, 130, 246, 0.5)'});"></i>
+                            </div>
+                        ` : `
+                            <img src="${project.image}" alt="${project.title}" style="width: 100%; height: 300px; object-fit: cover; border-radius: 15px; margin-bottom: 2rem;">
+                        `}
                     </div>
                     
                     <div style="margin-bottom: 2rem;">
@@ -1488,14 +2846,14 @@
             }
         });
 
-        // Add some interactive effects
+        // Add glow effect on project cards
         document.querySelectorAll('.project-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-15px) scale(1.02)';
+                this.style.boxShadow = '0 25px 60px -15px rgba(59, 130, 246, 0.5), 0 0 30px rgba(6, 182, 212, 0.3)';
             });
             
             card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(-10px) scale(1)';
+                this.style.boxShadow = '';
             });
         });
 
